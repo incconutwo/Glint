@@ -1,6 +1,8 @@
-# ✨ Glint AI Assistant
+# Glint AI Assistant
 
-**Glint** is a lightweight, high-speed AI text-processing utility for Windows 11. It lives in your system tray and empowers your clipboard with the world's most advanced language models (Llama 3.3 70B via Groq) using simple, global hotkeys.
+**Glint** is a keyboard-first AI utility for Windows 11/10 that acts as a global text-processing overlay. No browser tabs, no context switching—just highlight text in any app and hit a shortcut to fix grammar, summarize, or ask questions.
+
+Built for speed using **Llama 3.3 70B** via the **Groq** API, Glint feels like a native part of the OS, not a separate app.
 
 ![Glint Preview](https://github.com/user-attachments/assets/069f7e5d-ff86-437e-802e-58313dc7ca70)
 
@@ -61,14 +63,14 @@ On the first run, Glint will automatically prompt you to enter your **Groq API K
 
 ---
 
-## ⌨️ Global Shortcuts
+## ⌨️ Shortcuts
 
-| Shortcut | Action |
+| Shortcut | Function |
 | :--- | :--- |
-| `Ctrl + Alt + G` | **Grammar Fixer** (Correct text) |
-| `Ctrl + Alt + A` | **Answer Mode** (Get clean AI answers) |
-| `Ctrl + Alt + S` | **Summarize** (Bullet point summary) |
-| `Ctrl + Alt + P` | **Custom Prompt** (AI instruction popup) |
+| `Ctrl + Alt + G` | **Grammar** (Correction) |
+| `Ctrl + Alt + A` | **Answer** (Q&A) |
+| `Ctrl + Alt + S` | **Summarize** (Bullets) |
+| `Ctrl + Alt + P` | **Prompt** (Custom command) |
 
 ---
 
