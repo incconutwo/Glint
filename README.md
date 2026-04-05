@@ -46,7 +46,7 @@ Glint isn't just functional; it's designed to feel like part of the OS:
 Clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/your-username/Glint.git
+git clone https://github.com/incconutwo/Glint.git
 cd Glint
 pip install -r requirements.txt
 ```
