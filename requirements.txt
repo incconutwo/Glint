@@ -1,0 +1,8 @@
+customtkinter
+python-dotenv
+groq
+pystray
+Pillow
+pyperclip
+keyboard
+pywin32
