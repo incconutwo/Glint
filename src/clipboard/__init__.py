@@ -1,0 +1,1 @@
+from .manager import get_clipboard_html, set_clipboard_html
