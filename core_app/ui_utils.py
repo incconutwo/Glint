@@ -1,0 +1,40 @@
+import ctypes
+import customtkinter as ctk
+import tkinter as tk
+
+def apply_win11_mica(window):
+    """ Applies Windows 11 Immersive Dark Mode and Mica Effect """
+    try:
+        window.update()
+        # Only works on Windows
+        if not hasattr(ctypes, "windll"):
+            return
+
+        hwnd = ctypes.windll.user32.GetParent(window.winfo_id())
+        
+        is_dark = ctk.get_appearance_mode() == "Dark"
+        
+        # 1. Dark Theme DWM attribute
+        DWMWA_USE_IMMERSIVE_DARK_MODE = 20
+        rendering_policy = ctypes.c_int(1 if is_dark else 0)
+        ctypes.windll.dwmapi.DwmSetWindowAttribute(hwnd, DWMWA_USE_IMMERSIVE_DARK_MODE, ctypes.byref(rendering_policy), ctypes.sizeof(rendering_policy))
+        
+        # 2. Mica Backdrop
+        DWMWA_SYSTEMBACKDROP_TYPE = 38
+        mica_value = ctypes.c_int(2) # 2=Mica, 3=Acrylic
+        ctypes.windll.dwmapi.DwmSetWindowAttribute(hwnd, DWMWA_SYSTEMBACKDROP_TYPE, ctypes.byref(mica_value), ctypes.sizeof(mica_value))
+        
+        # 3. Extend Frame
+        class MARGINS(ctypes.Structure):
+            _fields_ = [("cxLeftWidth", ctypes.c_int), ("cxRightWidth", ctypes.c_int),
+                        ("cyTopHeight", ctypes.c_int), ("cyBottomHeight", ctypes.c_int)]
+        margins = MARGINS(-1, -1, -1, -1)
+        ctypes.windll.dwmapi.DwmExtendFrameIntoClientArea(hwnd, ctypes.byref(margins))
+        
+        # 4. Transparency Key (The "Mica" Hack)
+        mica_color = "#000001" if is_dark else "#FFFFFE"
+        window.configure(fg_color=mica_color)
+        window.config(bg=mica_color)
+        window.wm_attributes("-transparentcolor", mica_color)
+    except Exception as e:
+        print(f"Mica error: {e}")

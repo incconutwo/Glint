@@ -1,0 +1,25 @@
+# Environment and Credentials
+.env
+config.json
+
+# Python standard
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Build/Dist
+dist/
+build/
+*.exe
+*.pyc
+debug.log
+.playwright-mcp/

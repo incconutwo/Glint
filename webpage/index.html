@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glint — AI Text Assistant for Windows</title>
+    <meta name="description" content="Glint is a keyboard-first AI utility for Windows with a Ghost HUD overlay. Fix grammar, summarize, and answer questions without leaving your app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">Glint</span>
+            </a>
+            <div class="nav-links">
+                <a href="#ghost-hud">Ghost HUD</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How it works</a>
+                <a href="#shortcuts">Shortcuts</a>
+                <a href="https://github.com/incconutwo/Glint" class="nav-cta" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge reveal" data-delay="0">
+                <span class="badge-dot"></span>
+                Open Source · Free 
+            </div>
+            <h1 class="hero-title">
+                <span class="reveal" data-delay="100">Your text,</span>
+                <span class="reveal" data-delay="200">perfected in a</span>
+                <span class="hero-highlight reveal" data-delay="300">keystroke.</span>
+            </h1>
+            <p class="hero-subtitle reveal" data-delay="400">
+                Glint is a keyboard-first AI assistant for Windows that lives in your system tray. 
+                Highlight any text, press a shortcut, and the Ghost HUD appears right where you're typing.
+            </p>
+            <div class="hero-actions reveal" data-delay="500">
+                <a href="https://github.com/incconutwo/Glint" class="btn btn-primary" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    View on GitHub
+                </a>
+                <a href="#ghost-hud" class="btn btn-ghost">
+                    See the Ghost HUD
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Hero Visual: Simulated Glint UI -->
+        <div class="hero-visual reveal" data-delay="600">
+            <div class="mock-window">
+                <div class="mock-titlebar">
+                    <div class="mock-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="mock-title">Review Correction</span>
+                </div>
+                <div class="mock-content">
+                    <div class="mock-pane">
+                        <div class="pane-header">Original</div>
+                        <div class="pane-text">
+                            <span>I was thinking that we </span><span class="text-del">shoud probly</span><span> go to the meeting </span><span class="text-del">tomorow</span><span> but </span><span class="text-del">im</span><span> not sure if </span><span class="text-del">its</span><span> at 9 or 10 </span><span class="text-del">o clock</span><span>.</span>
+                        </div>
+                    </div>
+                    <div class="pane-divider"></div>
+                    <div class="mock-pane">
+                        <div class="pane-header">Corrected</div>
+                        <div class="pane-text">
+                            <span>I was thinking that we </span><span class="text-ins">should probably</span><span> go to the meeting </span><span class="text-ins">tomorrow</span><span> but </span><span class="text-ins">I'm</span><span> not sure if </span><span class="text-ins">it's</span><span> at 9 or 10 </span><span class="text-ins">o'clock</span><span>.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mock-footer">
+                    <span class="mock-hint">Press Enter to accept · Esc to cancel</span>
+                    <div class="mock-buttons">
+                        <button class="mock-btn mock-btn-cancel">✖ Cancel</button>
+                        <button class="mock-btn mock-btn-accept">✔ Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Strip -->
+    <section class="metrics">
+        <div class="metrics-inner">
+            <div class="metric reveal" data-delay="0">
+                <span class="metric-value">~200ms</span>
+                <span class="metric-label">Average latency</span>
+            </div>
+            <div class="metric-sep"></div>
+            <div class="metric reveal" data-delay="100">
+                <span class="metric-value">70B</span>
+                <span class="metric-label">Parameter model</span>
+            </div>
+            <div class="metric-sep"></div>
+            <div class="metric reveal" data-delay="200">
+                <span class="metric-value">4K</span>
+                <span class="metric-label">DPI aware</span>
+            </div>
+            <div class="metric-sep"></div>
+            <div class="metric reveal" data-delay="300">
+                <span class="metric-value">0</span>
+                <span class="metric-label">Context switching</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ghost HUD Section (NEW) -->
+    <section class="ghost-hud-section" id="ghost-hud">
+        <div class="section-header reveal">
+            <span class="section-tag">New</span>
+            <h2 class="section-title">The Ghost HUD</h2>
+            <p class="section-subtitle">A floating pill that appears exactly where your eyes already are.</p>
+        </div>
+
+        <div class="hud-showcase reveal" data-delay="100">
+            <!-- Simulated text editor background -->
+            <div class="hud-editor-bg">
+                <div class="hud-editor-titlebar">
+                    <div class="mock-dots"><span></span><span></span><span></span></div>
+                    <span class="mock-title">document.txt</span>
+                </div>
+                <div class="hud-editor-body">
+                    <div class="hud-editor-line"><span class="hud-line-num">14</span><span class="hud-line-text">The meeting is scheduled for tomorow at 3pm.</span></div>
+                    <div class="hud-editor-line"><span class="hud-line-num">15</span><span class="hud-line-text">Please confirm you're attendence.</span></div>
+                    <div class="hud-editor-line hud-editor-line-active"><span class="hud-line-num">16</span><span class="hud-line-text">Let me know if their are any issues.<span class="hud-caret"></span></span></div>
+                    <!-- The floating HUD pill -->
+                    <div class="hud-pill hud-pill-animated">
+                        <div class="hud-pill-dot">✦</div>
+                        <div class="hud-pill-text" id="hudPillText">The meeting is schedul...</div>
+                        <div class="hud-pill-actions">
+                            <button class="hud-pill-btn hud-pill-btn-accept">✔</button>
+                            <button class="hud-pill-btn hud-pill-btn-expand">↗</button>
+                            <button class="hud-pill-btn hud-pill-btn-reject">✖</button>
+                        </div>
+                    </div>
+                    <div class="hud-editor-line"><span class="hud-line-num">17</span><span class="hud-line-text"></span></div>
+                    <div class="hud-editor-line"><span class="hud-line-num">18</span><span class="hud-line-text">Best regards,</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hud-features-row">
+            <div class="hud-feature-item reveal" data-delay="0">
+                <div class="hud-feature-icon">📍</div>
+                <h4>Caret Tracking</h4>
+                <p>The HUD tracks your text cursor and appears right below the line you're editing.</p>
+            </div>
+            <div class="hud-feature-item reveal" data-delay="100">
+                <div class="hud-feature-icon">⌨️</div>
+                <h4>Keyboard First</h4>
+                <p>Press <kbd>Enter</kbd> to accept, <kbd>Esc</kbd> to cancel. Your hands never leave the keyboard.</p>
+            </div>
+            <div class="hud-feature-item reveal" data-delay="200">
+                <div class="hud-feature-icon">👁️</div>
+                <h4>Inline Preview</h4>
+                <p>See the corrected text instantly. Tap <kbd>↗</kbd> to expand the full diff view.</p>
+            </div>
+            <div class="hud-feature-item reveal" data-delay="300">
+                <div class="hud-feature-icon">💨</div>
+                <h4>Shimmer Feedback</h4>
+                <p>A shimmering animation tells you the AI is thinking—no spinners, no loading bars.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header reveal">
+            <span class="section-tag">Capabilities</span>
+            <h2 class="section-title">Four modes.<br>One shortcut away.</h2>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card feature-card-large reveal" data-delay="0">
+                <div class="feature-icon-wrap">
+                    <div class="feature-icon">⌨️</div>
+                </div>
+                <div class="feature-shortcut">Ctrl + Alt + G</div>
+                <h3>Grammar Fixer</h3>
+                <p>Instantly correct spelling, grammar, and punctuation while preserving your original tone, formatting, and HTML structure. Works in any app.</p>
+                <div class="feature-preview">
+                    <code><span class="text-del">teh</span> → <span class="text-ins">the</span></code>
+                    <code><span class="text-del">your</span> → <span class="text-ins">you're</span></code>
+                    <code><span class="text-del">definately</span> → <span class="text-ins">definitely</span></code>
+                </div>
+            </div>
+
+            <div class="feature-card reveal" data-delay="100">
+                <div class="feature-icon-wrap">
+                    <div class="feature-icon">💬</div>
+                </div>
+                <div class="feature-shortcut">Ctrl + Alt + A</div>
+                <h3>Answer Mode</h3>
+                <p>Highlight a question and get a lightning-fast, concise answer in a clean reading window. No tabs, no distractions.</p>
+            </div>
+
+            <div class="feature-card reveal" data-delay="200">
+                <div class="feature-icon-wrap">
+                    <div class="feature-icon">📋</div>
+                </div>
+                <div class="feature-shortcut">Ctrl + Alt + S</div>
+                <h3>Summarize</h3>
+                <p>Turn long emails, articles, or documents into 3–5 concise bullet points. Read in seconds what took minutes to write.</p>
+            </div>
+
+            <div class="feature-card reveal" data-delay="300">
+                <div class="feature-icon-wrap">
+                    <div class="feature-icon">✨</div>
+                </div>
+                <div class="feature-shortcut">Ctrl + Alt + P</div>
+                <h3>Custom Prompt</h3>
+                <p>The power tool. Type any instruction: "Make this more professional," "Translate to French," "Rewrite for Twitter." Your rules.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-header reveal">
+            <span class="section-tag">Workflow</span>
+            <h2 class="section-title">Three seconds.<br>Zero friction.</h2>
+        </div>
+
+        <div class="steps">
+            <div class="step reveal" data-delay="0">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>Select text</h3>
+                    <p>Highlight text in any application—your browser, email client, code editor, or chat window.</p>
+                </div>
+                <div class="step-visual">
+                    <div class="step-demo step-demo-select">
+                        <span>The quick brown fox </span><span class="selected-text">jumps over the lazy dog</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-connector reveal" data-delay="50">
+                <svg width="2" height="60" viewBox="0 0 2 60"><line x1="1" y1="0" x2="1" y2="60" stroke="rgba(255,255,255,0.1)" stroke-width="2" stroke-dasharray="4 4"/></svg>
+            </div>
+
+            <div class="step reveal" data-delay="100">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>Press shortcut</h3>
+                    <p>Hit one of four global shortcuts. The Ghost HUD appears at your caret while Llama 3.3 70B processes your text via Groq.</p>
+                </div>
+                <div class="step-visual">
+                    <div class="step-demo step-demo-keys">
+                        <kbd>Ctrl</kbd><span class="key-plus">+</span><kbd>Alt</kbd><span class="key-plus">+</span><kbd>G</kbd>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-connector reveal" data-delay="150">
+                <svg width="2" height="60" viewBox="0 0 2 60"><line x1="1" y1="0" x2="1" y2="60" stroke="rgba(255,255,255,0.1)" stroke-width="2" stroke-dasharray="4 4"/></svg>
+            </div>
+
+            <div class="step reveal" data-delay="200">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>Accept or expand</h3>
+                    <p>The Ghost HUD previews the result inline. Press <strong>Enter</strong> to accept, <strong>Esc</strong> to cancel, or <strong>↗</strong> to expand the full side-by-side diff.</p>
+                </div>
+                <div class="step-visual">
+                    <div class="step-demo step-demo-result">
+                        <div class="mini-hud">
+                            <span class="mini-hud-dot">✦</span>
+                            <span class="mini-hud-text">jumps over the lazy do...</span>
+                            <span class="mini-hud-keys"><kbd>↵</kbd> <kbd>Esc</kbd></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Native Experience -->
+    <section class="native" id="native">
+        <div class="native-inner">
+            <div class="native-text reveal">
+                <span class="section-tag">Design</span>
+                <h2 class="section-title">Feels like<br>Windows built it.</h2>
+                <p>Glint uses the official Windows 11 <strong>Mica</strong> backdrop, <strong>DWM dark mode</strong> APIs, and <strong>Segoe UI Variable</strong> typography. It follows your system theme automatically—light or dark.</p>
+                <ul class="native-list">
+                    <li>
+                        <span class="native-check">✓</span>
+                        Mica frosted-glass transparency
+                    </li>
+                    <li>
+                        <span class="native-check">✓</span>
+                        Automatic light/dark mode sync
+                    </li>
+                    <li>
+                        <span class="native-check">✓</span>
+                        High-DPI / 4K display support
+                    </li>
+                    <li>
+                        <span class="native-check">✓</span>
+                        System tray with synced settings
+                    </li>
+                    <li>
+                        <span class="native-check">✓</span>
+                        Instant Mode toggle (skip review)
+                    </li>
+                </ul>
+            </div>
+            <div class="native-visual reveal" data-delay="200">
+                <div class="mica-demo">
+                    <div class="mica-layer mica-bg"></div>
+                    <div class="mica-layer mica-frost"></div>
+                    <div class="mica-content">
+                        <div class="mica-titlebar">
+                            <span>Custom AI Prompt</span>
+                        </div>
+                        <div class="mica-body">
+                            <p class="mica-label">What should I do with this text?</p>
+                            <div class="mica-input">
+                                <span class="mica-typed"></span><span class="mica-cursor">|</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shortcuts Reference -->
+    <section class="shortcuts" id="shortcuts">
+        <div class="section-header reveal">
+            <span class="section-tag">Reference</span>
+            <h2 class="section-title">Keyboard shortcuts</h2>
+        </div>
+        <div class="shortcuts-grid">
+            <div class="shortcut-card reveal" data-delay="0">
+                <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>G</kbd></div>
+                <div class="shortcut-info">
+                    <span class="shortcut-name">Grammar</span>
+                    <span class="shortcut-desc">Fix spelling, grammar & punctuation</span>
+                </div>
+            </div>
+            <div class="shortcut-card reveal" data-delay="100">
+                <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>A</kbd></div>
+                <div class="shortcut-info">
+                    <span class="shortcut-name">Answer</span>
+                    <span class="shortcut-desc">Get a direct answer to a question</span>
+                </div>
+            </div>
+            <div class="shortcut-card reveal" data-delay="200">
+                <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>S</kbd></div>
+                <div class="shortcut-info">
+                    <span class="shortcut-name">Summarize</span>
+                    <span class="shortcut-desc">Condense text into bullet points</span>
+                </div>
+            </div>
+            <div class="shortcut-card reveal" data-delay="300">
+                <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>P</kbd></div>
+                <div class="shortcut-info">
+                    <span class="shortcut-name">Prompt</span>
+                    <span class="shortcut-desc">Custom AI instruction on selected text</span>
+                </div>
+            </div>
+            <div class="shortcut-card shortcut-card-hud reveal" data-delay="400">
+                <div class="shortcut-keys"><kbd>Enter</kbd></div>
+                <div class="shortcut-info">
+                    <span class="shortcut-name">Accept <span class="shortcut-badge">HUD</span></span>
+                    <span class="shortcut-desc">Accept the correction and paste it</span>
+                </div>
+            </div>
+            <div class="shortcut-card shortcut-card-hud reveal" data-delay="500">
+                <div class="shortcut-keys"><kbd>Esc</kbd></div>
+                <div class="shortcut-info">
+                    <span class="shortcut-name">Cancel <span class="shortcut-badge">HUD</span></span>
+                    <span class="shortcut-desc">Dismiss the HUD and keep original text</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-inner reveal">
+            <h2>Ready to stop<br>context switching?</h2>
+            <p>Glint is free, open-source, and ready now.<br>Clone, install, and you're done.</p>
+            <div class="cta-code">
+                <code>git clone https://github.com/incconutwo/Glint.git && cd Glint && pip install -r requirements.txt</code>
+                <button class="copy-btn" id="copyBtn" title="Copy to clipboard">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                </button>
+            </div>
+            <a href="https://github.com/incconutwo/Glint" class="btn btn-primary btn-large" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                Star on GitHub
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span class="logo-icon">✦</span>
+                <span>Glint</span>
+                <span class="footer-sep">·</span>
+                <span class="footer-muted">MIT License</span>
+            </div>
+            <div class="footer-right">
+                <span class="footer-muted">Built with ❤️ for high-speed productivity</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
